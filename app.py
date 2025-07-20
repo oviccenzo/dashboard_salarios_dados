@@ -91,7 +91,7 @@ with col_graf2:
             x='usd',
             nbins=30,
             title="Distribuição de salários anuais",
-            labels={'usd': 'Faixa salarial (USD)', 'count': 'Número de Registros'}
+            labels={'usd': 'Faixa salarial (USD)', 'count': ''}
         )
         grafico_hist.update_layout(title_x=0.1)
         st.plotly_chart(grafico_hist, use_container_width=True)
