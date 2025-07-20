@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide",
 )
 
-df = pd.read_csv("C:/Users/caelum/Desktop/imersao/dados-imersao-final.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/refs/heads/main/dados-imersao-final.csv")
 
 # --- Barra Lateral (Filtros) ---
 st.sidebar.header("🔍 Filtros")
