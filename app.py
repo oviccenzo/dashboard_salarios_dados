@@ -10,6 +10,7 @@ st.set_page_config(
     layout="wide",
 )
 
+# --- Carregamento dos dados ---
 df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/refs/heads/main/dados-imersao-final.csv")
 
 # --- Barra Lateral (Filtros) ---
@@ -109,9 +110,10 @@ with col_graf3:
             names='tipo_trabalho',
             values='quantidade',
             title='Proporção dos tipos de trabalho',
-            hole=0.5  # opcional: transforma em donut chart
+            hole=0.5  
         )
         grafico_remoto.update_traces(textinfo='percent+label')
+        grafico_remoto.update_layout(title_x=0.1)
         st.plotly_chart(grafico_remoto, use_container_width=True)
     else:
         st.warning("Nenhum dado para exibir no gráfico dos tipos de trabalho.")
@@ -126,6 +128,7 @@ with col_graf4:
             color_continuous_scale='rdylgn',
             title='Salário médio de Cientista de Dados por país',
             labels={'usd': 'Salário médio (USD)', 'residencia_iso3': 'País'})
+        grafico_paises.update_layout(title_x=0.1)
         st.plotly_chart(grafico_paises, use_container_width=True)
     else:
         st.warning("Nenhum dado para exibir no gráfico de países.")
